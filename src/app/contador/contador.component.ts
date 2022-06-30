@@ -4,17 +4,17 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-contador',
     template: `
-        <div class="content">
-          <h1>{{ title }}</h1>
+    
+        <h2>{{ title }}</h2>
 
-          <h3>La base es base: <strong>{{ base }}</strong></h3>
+        <h3>La base es base: <strong>{{ base }}</strong></h3>
 
-          <button (click)="calcular(base)">+{{base}}</button>
+        <button (click)="calcular(base)">+{{base}}</button>
 
-          <span>{{ contador }}</span>
+        <span>{{ contador }}</span>
 
-          <button (click)="calcular(-base)">-{{base}}</button>
-        </div>
+        <button (click)="calcular(-base)">-{{base}}</button>
+    
     `
 })
 export class ContadorComponent {
