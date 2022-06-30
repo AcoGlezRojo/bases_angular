@@ -7,7 +7,15 @@ import { Component } from '@angular/core'
 
 export class ToolbarComponent {
 
+  isOpen: boolean = false;
+
     onButtonClick(): void {
-        
+      
+        if(this.isOpen){
+          this.isOpen = false;
+        } else {
+          this.isOpen = true;
+        }
+        console.log('isOpen', this.isOpen)
     }
 }
