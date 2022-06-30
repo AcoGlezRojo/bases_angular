@@ -63,14 +63,13 @@ dd {
 }
 
 button {
-    background-color: black;
+    background-color: #1976d2;
     border-radius   : 5px;
     border          : 0px;
     color           : white;
     cursor          : pointer;
-    margin-right    : 5px;
-    margin-left     : 5px;
-    padding         : 5px 10px;
+    margin          : 0 15px;
+    padding         : 8px 15px;
 }
 
 button:hover {
