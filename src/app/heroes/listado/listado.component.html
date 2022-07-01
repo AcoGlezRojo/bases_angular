@@ -1,0 +1,37 @@
+<div class="container mt-8 py-6 sm:px-6 lg:px-8 bg-white">
+    <h2 class="mb-6 tracking-tight font-extrabold text-gray-900 sm:text-xl md:text-2xl">
+        Lista de Héroes
+    </h2>
+
+    <div class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200" *ngIf="numHeroes > 0">
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full">
+                <thead class="text-xs font-semibold uppercase bg-black text-white">
+                    <tr>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-left">Héroe</div>
+                        </th>
+
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Acciones</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm divide-y divide-gray-100">
+                    <tr *ngFor="let heroe of heroes; let i = index">
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="font-medium text-gray-800">{{ i}} {{ heroe }}</div>
+                        </td>
+
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-lg text-center">
+                                <button (click)="borrarHeroe(i)">x</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
