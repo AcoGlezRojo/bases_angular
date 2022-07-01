@@ -1,21 +1,28 @@
 import { Component } from '@angular/core'
 
 @Component({
-    selector: 'app-toolbar',
-    templateUrl: './toolbar.component.html'
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html'
 })
 
 export class ToolbarComponent {
 
-  isOpen: boolean = false;
+  isMenuOpen: boolean = false;
+  isProfileOpen: boolean = false;
 
-    onButtonClick(): void {
-      
-        if(this.isOpen){
-          this.isOpen = false;
-        } else {
-          this.isOpen = true;
-        }
-        console.log('isOpen', this.isOpen)
+  onMenuButton(): void {
+    if (this.isMenuOpen) {
+      this.isMenuOpen = false;
+    } else {
+      this.isMenuOpen = true;
     }
+  }
+
+  onProfileButton(): void {
+    if (this.isProfileOpen) {
+      this.isProfileOpen = false;
+    } else {
+      this.isProfileOpen = true;
+    }
+  }
 }
