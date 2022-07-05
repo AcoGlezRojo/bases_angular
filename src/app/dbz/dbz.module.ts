@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { MainPageComponent } from './main-page/main-page.component';
-
-
 
 @NgModule({
   declarations: [
@@ -10,9 +10,10 @@ import { MainPageComponent } from './main-page/main-page.component';
   ],
   exports: [
     MainPageComponent
-],
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class DbzModule { }

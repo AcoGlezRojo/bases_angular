@@ -1,55 +1,67 @@
-<div class="container mt-8 py-6 sm:px-6 lg:px-8 bg-white">
-    <h2 class="mb-6 tracking-tight font-extrabold text-gray-900 sm:text-xl md:text-2xl">
-        DBZ
-    </h2>
+<section class="mt-4">
+    <div class="container bg-white">
 
-    <div class="grid grid-flow-row-dense grid-cols-12 grid-rows-3">
-        <div class="col-span-6 text-xs font-semibold uppercase bg-black text-white p-3">Héroe</div>
-        <div class="col-span-4 text-xs font-semibold uppercase bg-black text-white p-3">Poder</div>
-        <div class="col-span-2 text-xs font-semibold uppercase bg-black text-white p-3">Acciones</div>
+        <h2 class="mb-4">
+            DBZ Heroes
+        </h2>
 
-        <div class="col-span-6 text-xs p-3 border-b border-x">Goku</div>
-        <div class="col-span-4 text-xs p-3 border-b border-r">15.000</div>
-        <div class="col-span-2 text-xs p-3 border-b border-r">x</div>
+        <div class="row">
+            <div class="col-lg-8 col-12">
 
-        <div class="col-span-6 text-xs p-3 border-b border-x">Goku</div>
-        <div class="col-span-4 text-xs p-3 border-b border-r">15.000</div>
-        <div class="col-span-2 text-xs p-3 border-b border-r">x</div>
-
-        <div class="col-span-6 text-xs p-3 border-b border-x">Goku</div>
-        <div class="col-span-4 text-xs p-3 border-b border-r">15.000</div>
-        <div class="col-span-2 text-xs p-3 border-b border-r">x</div>
-
-    </div>
-
-    <div class="mt-6">
-        <h3 class="mb-3 font-bold text-gray-900 sm:text-lg md:text-md">Agregar</h3>
-
-        <form action="#" method="POST">
-            <div class="grid grid-cols-12 gap-12">
-                <div class="col-span-12 sm:col-span-5">
-                    <label for="first-name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" autocomplete="given-name"
-                        class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <div class="row mx-0 bg-dark text-white py-2">
+                    <div class="col-6">
+                        <span>Héroe</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Poder</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Acciones</span>
+                    </div>
                 </div>
-
-                <div class="col-span-12 sm:col-span-5">
-                    <label for="last-name" class="block text-sm font-medium text-gray-700">Poder</label>
-                    <input type="number" name="poder" id="poder" autocomplete="family-name"
-                        class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                </div>
-
-                <div class="col-span-12 sm:col-span-2">
-                    <button
-                        class="bg-blue-500 text-white hover:bg-blue-400 rounded px-4 py-2 mt-5 mx-0 outline-none focus:shadow-outline">
-                        Guardar
-                    </button>
+                <div class="row mx-0 py-2 border" *ngFor="let personaje of personajes; let i = index">
+                    <div class="col-6">
+                        {{personaje.nombre}}
+                    </div>
+                    <div class="col-3">
+                        {{personaje.poder | number }}
+                    </div>
+                    <div class="col-3">
+                        <i class="bi bi-trash"></i>
+                    </div>
                 </div>
 
             </div>
+            <div class="col-lg-4 col-12">
+                <div class="bg-dark bg-opacity-10 p-3">
+                    <h3 class="">Agregar</h3>
+
+                    <form (ngSubmit)="agregarPersonaje()">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" aria-describedby="nombre"
+                                    [(ngModel)]="nuevo.nombre" class="form-control">
+                            </div>
+                            <div class="col-lg-6 col-12 mb-3">
+                                <label for="poder" class="form-label">Poder</label>
+                                <input type="number" name="poder" id="poder" [(ngModel)]="nuevo.poder"
+                                    class="form-control">
+                            </div>
+                            <div class="col-lg-2 col-12">
+                                <button type="submit" class="btn btn-primary">
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
-        </form>
 
 
     </div>
+</section>
