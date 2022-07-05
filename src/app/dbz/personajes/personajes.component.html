@@ -1,0 +1,22 @@
+<div class="row mx-0 bg-dark text-white py-2">
+    <div class="col-6">
+        <span>Héroe</span>
+    </div>
+    <div class="col-3">
+        <span>Poder</span>
+    </div>
+    <div class="col-3">
+        <span>Acciones</span>
+    </div>
+</div>
+<div class="row mx-0 py-2 border" *ngFor="let personaje of personajes; let i = index">
+    <div class="col-6">
+        {{personaje.nombre}}
+    </div>
+    <div class="col-3">
+        {{personaje.poder | number }}
+    </div>
+    <div class="col-3">
+        <i class="bi bi-trash"></i>
+    </div>
+</div>

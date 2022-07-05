@@ -1,0 +1,23 @@
+<div class="bg-dark bg-opacity-10 p-3">
+    <h3 class="">Agregar</h3>
+
+    <form (ngSubmit)="agregarPersonaje()">
+        <div class="row">
+            <div class="col-lg-6 col-12 mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" name="nombre" id="nombre" aria-describedby="nombre" [(ngModel)]="nuevo.nombre"
+                    class="form-control">
+            </div>
+            <div class="col-lg-6 col-12 mb-3">
+                <label for="poder" class="form-label">Poder</label>
+                <input type="number" name="poder" id="poder" [(ngModel)]="nuevo.poder" class="form-control">
+            </div>
+            <div class="col-lg-2 col-12">
+                <button type="submit" class="btn btn-primary">
+                    Guardar
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -7,61 +7,12 @@
 
         <div class="row">
             <div class="col-lg-8 col-12">
-
-                <div class="row mx-0 bg-dark text-white py-2">
-                    <div class="col-6">
-                        <span>Héroe</span>
-                    </div>
-                    <div class="col-3">
-                        <span>Poder</span>
-                    </div>
-                    <div class="col-3">
-                        <span>Acciones</span>
-                    </div>
-                </div>
-                <div class="row mx-0 py-2 border" *ngFor="let personaje of personajes; let i = index">
-                    <div class="col-6">
-                        {{personaje.nombre}}
-                    </div>
-                    <div class="col-3">
-                        {{personaje.poder | number }}
-                    </div>
-                    <div class="col-3">
-                        <i class="bi bi-trash"></i>
-                    </div>
-                </div>
-
+                <app-personajes [personajes]="personajes"></app-personajes>
             </div>
             <div class="col-lg-4 col-12">
-                <div class="bg-dark bg-opacity-10 p-3">
-                    <h3 class="">Agregar</h3>
-
-                    <form (ngSubmit)="agregarPersonaje()">
-                        <div class="row">
-                            <div class="col-lg-6 col-12 mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" aria-describedby="nombre"
-                                    [(ngModel)]="nuevo.nombre" class="form-control">
-                            </div>
-                            <div class="col-lg-6 col-12 mb-3">
-                                <label for="poder" class="form-label">Poder</label>
-                                <input type="number" name="poder" id="poder" [(ngModel)]="nuevo.poder"
-                                    class="form-control">
-                            </div>
-                            <div class="col-lg-2 col-12">
-                                <button type="submit" class="btn btn-primary">
-                                    Guardar
-                                </button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+               <app-form-agregar-personaje [personajes]="personajes" [nuevo]="nuevo"></app-form-agregar-personaje>
             </div>
         </div>
-
-
-
 
     </div>
 </section>
